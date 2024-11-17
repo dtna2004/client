@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo - Dating Web</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/notifications.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ghost-decoration"></div>
+    <div class="ghost-decoration"></div>
+    <div class="ghost-decoration"></div>
+    <div class="spider-decoration"></div>
+    <div class="spider-decoration"></div>
+
+    <nav>
+        <div class="logo">
+            <a href="home.html">Dating Web</a>
+        </div>
+        <div class="nav-links">
+            <a href="profile.html">
+                <i class="nav-icon">👤</i>
+                <span class="nav-text">Hồ sơ</span>
+            </a>
+            <a href="matching.html">
+                <i class="nav-icon">💘</i>
+                <span class="nav-text">Ghép cặp</span>
+            </a>
+            <a href="chat.html">
+                <i class="nav-icon">💬</i>
+                <span class="nav-text">Tin nhắn</span>
+            </a>
+            <a href="match-management.html">
+                <i class="nav-icon">👥</i>
+                <span class="nav-text">Bạn bè</span>
+            </a>
+            <a href="settings.html">
+                <i class="nav-icon">⚙️</i>
+                <span class="nav-text">Cài đặt</span>
+            </a>
+            <a href="#" id="logoutBtn">
+                <i class="nav-icon">🚪</i>
+                <span class="nav-text">Đăng xuất</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="notifications-container">
+        <h1>Thông báo</h1>
+        <div class="notifications-tabs">
+            <button class="tab-btn active" data-tab="matchRequests">Lời mời kết nối</button>
+            <button class="tab-btn" data-tab="systemNotifications">Thông báo hệ thống</button>
+        </div>
+        <div id="matchRequests" class="tab-content active">
+            <div id="matchRequestsList" class="notifications-list"></div>
+        </div>
+        <div id="systemNotifications" class="tab-content">
+            <div id="systemNotificationsList" class="notifications-list"></div>
+        </div>
+    </div>
+</body>
+<script src="../js/constants.js"></script>
+<script src="../js/notifications.js"></script>
+<script src="../js/notificationBadge.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
+        window.location.href = 'login.html';
+    });
+</script>
+</html> 

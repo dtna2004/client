@@ -1,0 +1,73 @@
+.matching-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.matches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.match-card {
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid var(--halloween-orange);
+    box-shadow: var(--spooky-shadow);
+    padding: 20px;
+    text-align: center;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 107, 26, 0.3);
+}
+
+.match-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.match-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.match-card p {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.match-card button {
+    background: #ff4b6e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.match-card button:hover {
+    background: #ff3356;
+}
+
+.score-bar {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.score-fill {
+    background: var(--halloween-orange);
+}
+
+.match-actions button {
+    background: var(--halloween-orange);
+}
+
+.match-actions button:hover {
+    background: var(--halloween-purple);
+} 

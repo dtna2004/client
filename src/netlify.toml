@@ -1,0 +1,9 @@
+
+[build]
+  publish = "src"
+  command = "echo 'No build command'"
+
+[[redirects]]
+  from = "/*"
+  to = "/pages/home.html"
+  status = 200
