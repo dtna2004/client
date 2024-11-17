@@ -45,22 +45,24 @@ async function updateUserLocation(location) {
 
 async function register(userData) {
     try {
+        console.log('Register request to:', `${window.API_URL}/auth/register`);
+        console.log('With data:', userData);
+
         const response = await fetch(`${window.API_URL}/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(userData),
-            mode: 'cors',
-            credentials: 'include'
+            body: JSON.stringify(userData)
         });
 
-        const data = await response.json();
         if (!response.ok) {
-            throw new Error(data.message || 'Lỗi đăng ký');
+            const error = await response.json();
+            throw new Error(error.message || 'Lỗi đăng ký');
         }
 
+        const data = await response.json();
         return data;
     } catch (error) {
         console.error('Register error:', error);
@@ -108,7 +110,6 @@ if (document.getElementById('registerForm')) {
             if (data.token) {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('userId', data.userId);
-                await getUserLocation();
                 window.location.href = 'settings.html';
             } else {
                 alert('Đăng ký thất bại');

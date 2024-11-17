@@ -1,6 +1,6 @@
-window.API_URL = 'https://dating-web-production.up.railway.app/api';
+window.API_URL = 'https://server-production-0316.up.railway.app/api';
 
-window.SOCKET_URL = 'https://dating-web-production.up.railway.app';
+window.SOCKET_URL = 'https://server-production-0316.up.railway.app';
 
 window.DEFAULT_AVATAR = '../images/default-avatar.png';
 
