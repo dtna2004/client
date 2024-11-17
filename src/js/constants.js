@@ -1,10 +1,6 @@
-window.API_URL = window.location.hostname === 'localhost' 
-    ? 'http://localhost:3000/api'
-    : 'https://your-railway-app.railway.app/api';
+window.API_URL = 'https://dating-web-production.up.railway.app/api';
 
-window.SOCKET_URL = window.location.hostname === 'localhost'
-    ? 'http://localhost:3000'
-    : 'https://your-railway-app.railway.app';
+window.SOCKET_URL = 'https://dating-web-production.up.railway.app';
 
 window.DEFAULT_AVATAR = '../images/default-avatar.png';
 

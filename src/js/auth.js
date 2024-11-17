@@ -44,18 +44,26 @@ async function updateUserLocation(location) {
 }
 
 async function register(userData) {
-    const response = await fetch(`${API_URL}/auth/register`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userData)
-    });
-    const data = await response.json();
-    if (!response.ok) {
-        throw new Error(data.message || 'Lỗi đăng ký');
+    try {
+        const response = await fetch(`${window.API_URL}/auth/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.message || 'Lỗi đăng ký');
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Register error:', error);
+        throw error;
     }
-    return data;
 }
 
 async function login(credentials) {
