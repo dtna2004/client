@@ -57,9 +57,11 @@ async function register(userData) {
             body: JSON.stringify(userData)
         });
 
+        console.log('Response status:', response.status);
+        
         if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.message || 'Lỗi đăng ký');
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Lỗi đăng ký');
         }
 
         const data = await response.json();

@@ -71,4 +71,8 @@ window.SUCCESS_MESSAGES = {
     MATCH_SENT: 'Đã gửi lời mời kết nối',
     MATCH_ACCEPTED: 'Đã chấp nhận lời mời kết nối',
     MATCH_REJECTED: 'Đã từ chối lời mời kết nối'
-}; 
+};
+
+window.CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/djkesszqc/upload';
+window.CLOUDINARY_UPLOAD_PRESET = 'dating_app';
+window.CLOUDINARY_CLOUD_NAME = 'djkesszqc'; 

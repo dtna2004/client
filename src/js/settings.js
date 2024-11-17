@@ -58,14 +58,14 @@ async function uploadImage(file) {
     try {
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('upload_preset', 'dating_app');
-        formData.append('cloud_name', 'djkesszqc');
+        formData.append('upload_preset', window.CLOUDINARY_UPLOAD_PRESET);
+        formData.append('cloud_name', window.CLOUDINARY_CLOUD_NAME);
 
-        console.log('Uploading to:', CLOUDINARY_URL);
-        console.log('Upload preset:', 'dating_app');
-        console.log('Cloud name:', 'djkesszqc');
+        console.log('Uploading to:', window.CLOUDINARY_URL);
+        console.log('Upload preset:', window.CLOUDINARY_UPLOAD_PRESET);
+        console.log('Cloud name:', window.CLOUDINARY_CLOUD_NAME);
 
-        const response = await fetch('https://api.cloudinary.com/v1_1/djkesszqc/upload', {
+        const response = await fetch(window.CLOUDINARY_URL, {
             method: 'POST',
             body: formData
         });
