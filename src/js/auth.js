@@ -45,12 +45,16 @@ async function updateUserLocation(location) {
 
 async function register(userData) {
     try {
+        console.log('Register request to:', `${window.API_URL}/auth/register`);
+        console.log('With data:', userData);
+
         const response = await fetch(`${window.API_URL}/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(userData),
+            credentials: 'include'
         });
 
         if (!response.ok) {
@@ -99,7 +103,10 @@ if (document.getElementById('registerForm')) {
         };
 
         try {
+            console.log('Attempting to register with:', userData);
             const data = await register(userData);
+            console.log('Register response:', data);
+
             if (data.token) {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('userId', data.userId);
@@ -109,6 +116,7 @@ if (document.getElementById('registerForm')) {
                 alert('Đăng ký thất bại');
             }
         } catch (error) {
+            console.error('Detailed error:', error);
             alert(error.message || 'Đã có lỗi xảy ra khi đăng ký');
         }
     });
