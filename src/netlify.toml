@@ -1,7 +1,7 @@
-
 [build]
+  base = "/"
   publish = "src"
-  command = "echo 'No build command'"
+  command = "# no build command"
 
 [[redirects]]
   from = "/*"
